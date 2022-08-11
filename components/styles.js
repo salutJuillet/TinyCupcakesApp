@@ -83,16 +83,18 @@ const topNav = StyleSheet.create({
         paddingRight:10
     },
     icons:{
-        color:'#ffffff'
+        color:'#ffffff',
+        fontSize:25
     },
     logo:{
-        color:'#ffffff'
+        color:'#ffffff',
+        fontSize:20
     },
     iconContainer:{
         color:'#ffffff',
         flexDirection:'row',
         justifyContent:'space-between',
-        width:30
+        width:60
     }
 })
 
@@ -177,8 +179,61 @@ const customOrder = StyleSheet.create({
 
 const menu = StyleSheet.create({
     container:{
-        flex:1
-    }
+        flex:1,
+        alignItems:'center'
+    },
+    titleContainer:{
+        marginTop:50,
+        marginBottom:20
+    },
+    title:{
+        color:'#1553a3',
+        fontWeight:'bold',
+        fontSize:18,
+        borderBottomWidth:2,
+        borderBottomColor:'#e795bb'
+    },
+    categoryContainer:{
+        flexDirection:'row',
+        justifyContent:'space-evenly',
+        alignItems:'center',
+        width:200
+    },
+    category:{
+        alignItems:'center'
+    },
+    categoryImageCupcake:{
+        width:30,
+        height:36
+    },
+    categoryImageCake:{
+        width:40,
+        height:35
+    },
+    categoryText:{
+        color:'#1553a3',
+        fontSize:10,
+        fontWeight:'700'
+    },
+    itemContainer:{
+        marginTop:25,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-around',
+        flex:1,
+        borderWidth:1
+    },
+    item:{
+        width:140,
+        justifyContent:'center',
+        alignItems:'center',
+        borderWidth:1
+    },
+    itemImage:{
+        width:90,
+        height:107
+    },
+    itemText:{}
 })
 
 const fonts = StyleSheet.create({

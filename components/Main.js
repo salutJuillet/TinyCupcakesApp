@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import { topDelivery, topNav, slide, customOrder, menu } from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -65,7 +65,44 @@ const deliveryMain = () => {
         </View>
 
         <View style={menu.container}>
-            <Text>menu</Text>
+            <View style={menu.titleContainer}>
+                <Text style={menu.title}>Freshly Baked</Text>
+                <Image />
+            </View>
+
+            <View style={menu.categoryContainer}>
+                <View style={menu.category}>
+                    <Image style={menu.categoryImageCupcake} source={require('../assets/image/RedVelvet.png')} />
+                    
+                    <Text style={menu.categoryText}>CUPCAKES</Text>
+                </View>
+                <View style={menu.category}>
+                    <Image style={menu.categoryImageCake} source={require('../assets/image/cc_cake.png')} />
+                    <Text style={menu.categoryText}>CAKES</Text>
+                </View>
+            </View>
+
+            <View style={menu.itemContainer}>
+                <View style={menu.item}>
+                    <Image source={require('../assets/image/RedVelvet.png')}
+                           style={menu.itemImage} />
+                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
+                    <Text style={menu.itemText}>$2.80</Text>
+                </View>
+                <View style={menu.item}>
+                    <Image source={require('../assets/image/RedVelvet.png')}
+                           style={menu.itemImage} />
+                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
+                    <Text style={menu.itemText}>$2.80</Text>
+                </View>
+                <View style={menu.item}>
+                    <Image source={require('../assets/image/RedVelvet.png')}
+                           style={menu.itemImage} />
+                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
+                    <Text style={menu.itemText}>$2.80</Text>
+                </View>
+            </View>
+            
         </View>
     </View>
   )
