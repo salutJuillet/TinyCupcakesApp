@@ -1,11 +1,21 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import { topDelivery, topNav, slide, customOrder, menu } from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+
+const ITEM = [
+    {name:'Red Velvet', price:'2.95'},
+    {name:'Devil', price:'3.00'},
+    {name:'Classic Vanilla', price:'2.80'},
+    {name:'Raspberry Cinnamon', price:'2.95'},
+    {name:'Mint Chocolate', price:'2.80'},
+    {name:'Blueberry White Chocolate', price:'2.95'}
+]
+
 const deliveryMain = () => {
   return (
-    <View>
+    <ScrollView>
         <View style={topDelivery.container}>
             <Text style={topDelivery.text}>
                 Order within 25km form city and pay only $12.50
@@ -71,40 +81,32 @@ const deliveryMain = () => {
             </View>
 
             <View style={menu.categoryContainer}>
-                <View style={menu.category}>
+                <TouchableOpacity style={menu.category}>
                     <Image style={menu.categoryImageCupcake} source={require('../assets/image/RedVelvet.png')} />
                     
                     <Text style={menu.categoryText}>CUPCAKES</Text>
-                </View>
-                <View style={menu.category}>
+                </TouchableOpacity>
+                <TouchableOpacity style={menu.category}>
                     <Image style={menu.categoryImageCake} source={require('../assets/image/cc_cake.png')} />
                     <Text style={menu.categoryText}>CAKES</Text>
-                </View>
+                </TouchableOpacity>
             </View>
 
             <View style={menu.itemContainer}>
-                <View style={menu.item}>
-                    <Image source={require('../assets/image/RedVelvet.png')}
-                           style={menu.itemImage} />
-                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
-                    <Text style={menu.itemText}>$2.80</Text>
-                </View>
-                <View style={menu.item}>
-                    <Image source={require('../assets/image/RedVelvet.png')}
-                           style={menu.itemImage} />
-                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
-                    <Text style={menu.itemText}>$2.80</Text>
-                </View>
-                <View style={menu.item}>
-                    <Image source={require('../assets/image/RedVelvet.png')}
-                           style={menu.itemImage} />
-                    <Text style={menu.itemText}>Red Velvet Cupcakes</Text>
-                    <Text style={menu.itemText}>$2.80</Text>
-                </View>
+                {
+                    ITEM.map(i => (
+                        <TouchableOpacity key={i.name} style={menu.item}>
+                            <Image source={require('../assets/image/RedVelvet.png')}
+                                   style={menu.itemImage} />
+                            <Text style={menu.itemText}>{i.name}</Text>
+                            <Text style={menu.itemText}>$ {i.price}</Text>
+                        </TouchableOpacity>
+                    ))
+                }
             </View>
             
         </View>
-    </View>
+    </ScrollView>
   )
 }
 
