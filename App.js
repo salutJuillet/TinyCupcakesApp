@@ -1,12 +1,14 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
-import Main from './components/Main'
+import { NavigationContainer } from '@react-navigation/native';
+
+import DrawerNavigator from './components/DrawerNavigator';
+
 
 const App = () => {
   return (
-    <ScrollView>
-      <Main />
-    </ScrollView>
+    <NavigationContainer>
+      <DrawerNavigator />
+    </NavigationContainer>
   )
 }
 

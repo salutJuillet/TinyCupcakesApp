@@ -1,67 +1,11 @@
-import { Platform, StyleSheet } from 'react-native'
+import { Platform, StyleSheet, Dimensions } from 'react-native'
+
+const windowWidth = Dimensions.get('window').width;
 
 
-const light = StyleSheet.create({
-    container:{
-        flex:1,
-        height:'100%',
-        paddingTop:170
-    },
-    mainText:{
-        fontSize:40,
-        textAlign:'center'
-    },
-    buttonContainer:{
-        width:170,
-        alignItems:'center',
-        borderWidth:3,
-        borderRadius:30,
-        borderColor:'orange',
-        marginTop:70,
-        paddingTop:15,
-        paddingBottom:15
-    },
-    buttonText:{
-        fontSize:20
-    }
-})
-
-const dark = StyleSheet.create({
-    container:{
-        flex:1,
-        height:'100%',
-        paddingTop:170,
-        backgroundColor:'#333333'
-    },
-    mainText:{
-        fontSize:40,
-        textAlign:'center',
-        color:'#ffffff'
-    },
-    buttonContainer:{
-        width:170,
-        alignItems:'center',
-        borderWidth:3,
-        borderRadius:30,
-        borderColor:'skyblue',
-        backgroundColor:'skyblue',
-        marginTop:70,
-        paddingTop:15,
-        paddingBottom:15,
-        marginBottom:30
-    },
-    buttonText:{
-        fontSize:20,
-        color:'#ffffff'
-    }
-})
-
-
-/***** TINY Cupcakes 앱 *****/
-const topDelivery = StyleSheet.create({
+export const topDelivery = StyleSheet.create({
     container:{
         backgroundColor:'#e795bb',
-        marginTop:25,
         height:60,
         alignItems:'center',
         justifyContent:'center'
@@ -72,7 +16,7 @@ const topDelivery = StyleSheet.create({
     }
 })
 
-const topNav = StyleSheet.create({
+export const topNav = StyleSheet.create({
     container:{
         height:70,
         backgroundColor:'#1553a3',
@@ -98,9 +42,8 @@ const topNav = StyleSheet.create({
     }
 })
 
-const slide = StyleSheet.create({
+export const slide = StyleSheet.create({
     container:{
-        backgroundColor:'#fef7ea',
         height:250,
         flexDirection:'row',
         justifyContent:'space-around',
@@ -147,20 +90,16 @@ const slide = StyleSheet.create({
     }
 })
 
-const customOrder = StyleSheet.create({
+export const customOrder = StyleSheet.create({
     container:{
         flexDirection:'row',
-        // marginTop:30,
-        // marginBottom:30,
         height:150,
-        borderWidth:1,
-        borderColor:'red'
     },
     textContainer:{
         justifyContent:'center',
         alignItems:'center',
-        borderWidth:1,
         height:'100%',
+        width: windowWidth /2,
         paddingLeft:10,
         paddingRight:10
     },
@@ -177,7 +116,7 @@ const customOrder = StyleSheet.create({
     }
 })
 
-const menu = StyleSheet.create({
+export const menu = StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center'
@@ -191,7 +130,7 @@ const menu = StyleSheet.create({
         fontWeight:'bold',
         fontSize:18,
         borderBottomWidth:2,
-        borderBottomColor:'#e795bb'
+        borderBottomColor:'#1553a3'
     },
     categoryContainer:{
         flexDirection:'row',
@@ -211,42 +150,45 @@ const menu = StyleSheet.create({
         height:35
     },
     categoryText:{
-        color:'#1553a3',
+        color:'#e795bb',
         fontSize:10,
         fontWeight:'700'
     },
     itemContainer:{
         marginTop:25,
+        marginBottom:25,
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-around',
+        justifyContent:'center',
         flex:1,
-        borderWidth:1
+        flexWrap: 'wrap'
     },
     item:{
-        width:140,
+        width: windowWidth /2 - 20,
         justifyContent:'center',
         alignItems:'center',
-        borderWidth:1
+        padding:10,
     },
     itemImage:{
-        width:90,
-        height:107
+        width:120,
+        height:155,
+        marginBottom:5
     },
-    itemText:{}
+    itemText:{
+        fontSize:17,
+        textAlign: 'center'
+    }
 })
 
-const fonts = StyleSheet.create({
+export const fonts = StyleSheet.create({
     fonts:{
         ...Platform.select({
             ios:{
-                fontFamily:'American Typewriter',
-                android:{
-                    fontFamily:'monospace'
-                }
+                fontFamily:'American Typewriter'
+            },
+            android:{
+                fontFamily:'Sunn Line Free'
             }
         })
     }
 })
-
-export { light, dark, topDelivery, topNav, slide, customOrder, menu }
