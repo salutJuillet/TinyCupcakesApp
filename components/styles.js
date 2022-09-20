@@ -1,7 +1,6 @@
 import { Platform, StyleSheet, Dimensions } from 'react-native'
 
-const windowWidth = Dimensions.get('window').width;
-
+export const windowWidth = Dimensions.get('window').width;
 
 export const topDelivery = StyleSheet.create({
     container:{
@@ -101,7 +100,8 @@ export const customOrder = StyleSheet.create({
         height:'100%',
         width: windowWidth /2,
         paddingLeft:10,
-        paddingRight:10
+        paddingRight:10,
+        width: windowWidth / 2
     },
     textTitle:{
         fontSize:14,
@@ -119,7 +119,7 @@ export const customOrder = StyleSheet.create({
 export const menu = StyleSheet.create({
     container:{
         flex:1,
-        alignItems:'center'
+        alignItems:'center',
     },
     titleContainer:{
         marginTop:50,
@@ -136,7 +136,7 @@ export const menu = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-evenly',
         alignItems:'center',
-        width:200
+        width:200,
     },
     category:{
         alignItems:'center'
@@ -155,8 +155,7 @@ export const menu = StyleSheet.create({
         fontWeight:'700'
     },
     itemContainer:{
-        marginTop:25,
-        marginBottom:25,
+        marginVertical:25,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
