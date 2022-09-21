@@ -13,11 +13,13 @@ const BottomTabsNavigator = () => {
     <Tab.Navigator screenOptions={{
         headerShown:false,
         tabBarActiveTintColor:'#fef7ea',
+        // tabBarStyle:{height:60},
+        // tabBarLabelStyle:{position:'relative', top:-5},
         tabBarBackground:()=>(
           <View style={{backgroundColor:'#1553a3', flex:1}} />
         )
        }}>
-            <Tab.Screen name='Main' 
+            <Tab.Screen name='Main'
                 options={{
                     headerShown: false,
                     tabBarIcon:({color}) => (
