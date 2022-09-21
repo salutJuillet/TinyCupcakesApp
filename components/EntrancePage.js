@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef } from 'react';
-import { StyleSheet, SafeAreaView, Image, Text, View, TouchableOpacity, Easing, Animated } from 'react-native';
+import { StyleSheet, Image, Text, View, TouchableOpacity, Easing, Animated } from 'react-native';
 import { useFonts } from "expo-font";
 // import Text from './DefaultText'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const EntrancePage = ({navigation}) => {
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
   titleImage:{
     width:350,
     height:70,
-    marginTop:275
+    marginTop:235
   },
   button:{
     backgroundColor:'#1553a3',
