@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 
-import DrawerNavigator from './components/DrawerNavigator';
+import DrawerNavigator from './navigation/DrawerNavigator';
 
 
 const App = () => {

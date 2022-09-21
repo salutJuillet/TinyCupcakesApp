@@ -1,8 +1,8 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import OrderPage from './Order'
-import Cart from './Cart'
+import OrderPage from '../components/Order'
+import Cart from '../components/Cart'
 
 const OrderStack = createNativeStackNavigator();
 
