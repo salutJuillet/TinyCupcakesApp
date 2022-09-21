@@ -4,7 +4,7 @@ export const windowWidth = Dimensions.get('window').width;
 
 export const topDelivery = StyleSheet.create({
     container:{
-        backgroundColor:'#e795bb',
+        backgroundColor:'#e497bb',
         height:60,
         alignItems:'center',
         justifyContent:'center'
@@ -150,7 +150,7 @@ export const menu = StyleSheet.create({
         height:35
     },
     categoryText:{
-        color:'#e795bb',
+        color:'#e497bb',
         fontSize:10,
         fontWeight:'700'
     },
