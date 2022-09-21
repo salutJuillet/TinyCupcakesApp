@@ -1,5 +1,6 @@
 import React from 'react'
-import { SafeAreaView, Text, Button } from 'react-native'
+import { Text, Button } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Cart = ({navigation}) => {
   return (
