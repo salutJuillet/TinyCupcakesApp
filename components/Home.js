@@ -2,6 +2,9 @@ import React from 'react'
 import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import { topDelivery, topNav, slide, customOrder, menu } from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
+import StatusBar from './StatusBar'
 
 
 const ITEM = [
@@ -24,8 +27,11 @@ const Item = ({item}) => (
     )
 )
 
-const Main = () => {
+
+const Home = ({navigation}) => {
   return (
+    <SafeAreaView>
+        {/* <StatusBar /> */}
         <ScrollView>
             <View style={topDelivery.container}>
                 <Text style={topDelivery.text}>
@@ -36,7 +42,7 @@ const Main = () => {
                 </Text>
             </View>
             <View style={topNav.container}>
-                <TouchableOpacity style={topNav.iconContainer}>
+                <TouchableOpacity onPress={()=>navigation.toggleDrawer()} style={topNav.iconContainer}>
                     <Icon name="bars" style={topNav.icons} />
                 </TouchableOpacity>
                 <Text style={topNav.logo}>TINY Cupcakes</Text>
@@ -118,7 +124,8 @@ const Main = () => {
                 </View>
             </View>
         </ScrollView>
+    </SafeAreaView>
   )
 }
 
-export default Main
+export default Home
