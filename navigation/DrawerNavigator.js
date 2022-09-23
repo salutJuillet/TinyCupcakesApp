@@ -2,7 +2,7 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { StatusBar } from 'react-native';
 
-import BottomTabsNavigator from './BottomTabsNavigator';
+import StackNavigator from './StackNavigator'
 import Collections from '../components/Collections'
 import About from '../components/About'
 import Contact from '../components/Contact'
@@ -15,9 +15,8 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator 
-      initialRouteName='BottomTabsNavigator'
+      initialRouteName='StackNavigator'
       screenOptions={{
-        headerShown: false,
         drawerLabel:'Home',
         drawerLabelStyle:{color:'#ffffff', fontSize:22},
         drawerContentStyle:{backgroundColor:'#1553a3'},
@@ -27,8 +26,9 @@ const DrawerNavigator = () => {
       }}
     >
         <Drawer.Screen
-            name='BottomTabsNavigator' 
-            component={BottomTabsNavigator} 
+            name='StackNavigator' 
+            component={StackNavigator} 
+            options={{headerShown: false}}
         />
         <Drawer.Screen name='Collections' component={Collections} options={{drawerLabel:'COLLECTIONS'}} />
         <Drawer.Screen name='About' component={About} options={{drawerLabel:'ABOUT'}} />

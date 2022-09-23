@@ -3,8 +3,8 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import MainStackNavigator from './MainStackNavigator'
-import OrderStackNavigator from './OrderStackNavigator';
+import Home from '../components/Home'
+import OrderStackNavigator from './OrderStackNavigator'
 
 const Tab = createBottomTabNavigator();
 
@@ -19,24 +19,26 @@ const BottomTabsNavigator = () => {
           <View style={{backgroundColor:'#1553a3', flex:1}} />
         )
        }}>
-            <Tab.Screen name='Main'
+            <Tab.Screen 
+                name='Main'
+                component={Home}
                 options={{
                     headerShown: false,
                     tabBarIcon:({color}) => (
                     <MaterialCommunityIcons name="cupcake" size={30} color={color} />
                     )
-                }}>
-                { () => <MainStackNavigator /> }
-            </Tab.Screen>
+                }}
+            />
 
-            <Tab.Screen name='Order'
+            <Tab.Screen 
+                name='Order'
+                component={OrderStackNavigator}
                 options={{
                     tabBarIcon:({color}) => (
                     <MaterialCommunityIcons name="book-open-variant" size={30} color={color} />
                     )
-                }}>
-                { () => <OrderStackNavigator /> }
-            </Tab.Screen>
+                }}
+            />
         </Tab.Navigator>
   )
 }

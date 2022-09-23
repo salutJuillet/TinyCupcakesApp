@@ -8,7 +8,7 @@ const OrderStack = createNativeStackNavigator();
 
 const OrderStackNavigator = () => {
   return (
-    <OrderStack.Navigator>
+    <OrderStack.Navigator initialRouteName='OrderPage'>
         <OrderStack.Screen name='OrderPage' component={OrderPage} />
         <OrderStack.Screen name='Cart' component={Cart} />
     </OrderStack.Navigator>

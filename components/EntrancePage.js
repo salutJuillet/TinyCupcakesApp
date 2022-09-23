@@ -59,7 +59,7 @@ const EntrancePage = ({navigation}) => {
                       style={styles.titleImage} />
       {
         fontsLoaded && (
-            <TouchableOpacity onPress={()=>navigation.navigate('Home')}
+            <TouchableOpacity onPress={()=>navigation.navigate('BottomTabs')}
                               style={styles.button}>
               <View>
                 <Text style={styles.buttonText}>Let's Start</Text>
