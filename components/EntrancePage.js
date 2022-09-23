@@ -81,12 +81,12 @@ const styles = StyleSheet.create({
     width:200,
     height:152,
     position:'absolute',
-    top:110,
+    top:150,
   },
   titleImage:{
     width:350,
     height:70,
-    marginTop:235
+    marginTop:275
   },
   button:{
     backgroundColor:'#1553a3',
