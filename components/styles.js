@@ -23,7 +23,7 @@ export const topNav = StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center',
         paddingLeft:10,
-        paddingRight:10
+        paddingRight:10,
     },
     icons:{
         color:'#ffffff',
@@ -177,6 +177,33 @@ export const menu = StyleSheet.create({
         fontSize:17,
         textAlign: 'center'
     }
+})
+
+export const menuModal = StyleSheet.create({
+  menuInfo:{
+    fontSize:18,
+    textAlign:'center'
+  },
+  modalContainer:{
+    width:300,
+    height:400, 
+    position: 'absolute',
+    top:'50%',
+    left:'50%',
+    transform: [{translate:[-150, -200]}],
+    backgroundColor:'#fff',
+    elevation:3,
+    borderRadius:8,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  close:{
+    backgroundColor:'#e497bb',
+  },
+  modalImage:{
+    width:180,
+    height:232.5
+  }
 })
 
 export const fonts = StyleSheet.create({

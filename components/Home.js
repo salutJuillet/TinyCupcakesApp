@@ -1,6 +1,6 @@
-import React from 'react'
-import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
-import { topDelivery, topNav, slide, customOrder, menu } from './styles'
+import React, {useState} from 'react'
+import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground, Modal, Button } from 'react-native'
+import { topDelivery, topNav, slide, customOrder, menu, menuModal } from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -16,19 +16,67 @@ const ITEM = [
     {name:'Blueberry White Chocolate', price:'2.95', url: require('../assets/image/BlueberryWhiteChocolate.png')}
 ]
 
-const Item = ({item}) => (
-    item.map(i => 
-        <TouchableOpacity key={i.name} style={menu.item}>
-            <Image source={i.url}
-                   style={menu.itemImage} />
-            <Text style={menu.itemText}>{i.name}</Text>
-            <Text style={menu.itemText}>${i.price}</Text>
-        </TouchableOpacity>
-    )
-)
-
 
 const Home = ({navigation}) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalInfo, setModalInfo] = useState({
+    name: '',
+    price: '',
+    url: ''
+  })
+  const showModal = () => {
+    setIsOpen(true);
+  }
+
+  const handlePress = (i) => {
+    setIsOpen(true);
+    setModalInfo({
+        name: i.name,
+        price: i.price,
+        url: i.url
+    });
+  }
+
+  const Item = ({item}) => (
+    item.map(i => 
+        <>
+            <TouchableOpacity 
+                    key={i.name} 
+                    style={menu.item} 
+                    onPress={()=>handlePress(i)}
+            >
+                <Image source={i.url}
+                    style={menu.itemImage} />
+                <Text style={menu.itemText}>{i.name}</Text>
+                <Text style={menu.itemText}>${i.price}</Text>
+            </TouchableOpacity>
+        </>
+    )
+  )
+
+  const MenuModal = () => (
+    <Modal 
+        animationType='slide' 
+        visible={isOpen} 
+        transparent={true}
+    >
+        <View style={menuModal.modalContainer}>
+            <TouchableOpacity 
+                style={menuModal.close}
+                onPress={()=>setIsOpen(false)}>
+                <Text style={{color:'#fff'}}>close</Text>
+            </TouchableOpacity>
+            <Image source={modalInfo.url} style={menuModal.modalImage} />
+            <Text style={menuModal.menuInfo}>{modalInfo.name}</Text>
+            <Text style={menuModal.menuInfo}>{modalInfo.price}</Text>
+            <Text>-1+</Text>
+
+            <Button title='Add to cart' />
+        </View>
+    </Modal>
+  )
+
   return (
     <SafeAreaView>
         {/* <StatusBar /> */}
@@ -122,6 +170,7 @@ const Home = ({navigation}) => {
                 <View style={menu.itemContainer}>
                     <Item item={ITEM} />
                 </View>
+                <MenuModal />
             </View>
         </ScrollView>
     </SafeAreaView>
