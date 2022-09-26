@@ -182,11 +182,12 @@ export const menu = StyleSheet.create({
 export const menuModal = StyleSheet.create({
   menuInfo:{
     fontSize:18,
-    textAlign:'center'
+    textAlign:'center',
+    marginVertical:1
   },
   modalContainer:{
     width:300,
-    height:400, 
+    height:420, 
     position: 'absolute',
     top:'50%',
     left:'50%',
@@ -195,14 +196,27 @@ export const menuModal = StyleSheet.create({
     elevation:3,
     borderRadius:8,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+  },
+  closeButtonContainer:{
+    position:'absolute',
+    right:15,
+    top:15
   },
   close:{
-    backgroundColor:'#e497bb',
+    color:'#1553a3',
   },
   modalImage:{
     width:180,
     height:232.5
+  },
+  cartButtonContainer:{
+    backgroundColor:'#1553a3',
+    padding:10,
+    marginTop:15
+  },
+  cartButtonText:{
+    color:'#fff'
   }
 })
 

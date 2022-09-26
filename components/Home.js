@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { ScrollView, View, Text, TouchableOpacity, Image, ImageBackground, Modal, Button } from 'react-native'
 import { topDelivery, topNav, slide, customOrder, menu, menuModal } from './styles'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import StatusBar from './StatusBar'
@@ -25,8 +26,8 @@ const Home = ({navigation}) => {
     price: '',
     url: ''
   })
-  const showModal = () => {
-    setIsOpen(true);
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
   }
 
   const handlePress = (i) => {
@@ -62,17 +63,21 @@ const Home = ({navigation}) => {
         transparent={true}
     >
         <View style={menuModal.modalContainer}>
-            <TouchableOpacity 
-                style={menuModal.close}
-                onPress={()=>setIsOpen(false)}>
-                <Text style={{color:'#fff'}}>close</Text>
+            <TouchableOpacity
+                style={menuModal.closeButtonContainer}
+                onPress={toggleModal}
+            >
+                <AntDesign name="closecircle" size={24} style={menuModal.close} />
             </TouchableOpacity>
             <Image source={modalInfo.url} style={menuModal.modalImage} />
-            <Text style={menuModal.menuInfo}>{modalInfo.name}</Text>
+            <Text style={[menuModal.menuInfo, {marginTop:15}]}>{modalInfo.name}</Text>
             <Text style={menuModal.menuInfo}>{modalInfo.price}</Text>
-            <Text>-1+</Text>
+            <Text style={menuModal.menuInfo}>-1+</Text>
 
-            <Button title='Add to cart' />
+            <TouchableOpacity
+                style={menuModal.cartButtonContainer}>
+                <Text style={menuModal.cartButtonText}>ADD TO CART</Text>
+            </TouchableOpacity>
         </View>
     </Modal>
   )
@@ -91,15 +96,15 @@ const Home = ({navigation}) => {
             </View>
             <View style={topNav.container}>
                 <TouchableOpacity onPress={()=>navigation.toggleDrawer()} style={topNav.iconContainer}>
-                    <Icon name="bars" style={topNav.icons} />
+                    <FontAwesome name="bars" style={topNav.icons} />
                 </TouchableOpacity>
                 <Text style={topNav.logo}>TINY Cupcakes</Text>
                 <View style={topNav.iconContainer}>
                     <TouchableOpacity>
-                        <Icon name="search" style={topNav.icons} />
+                        <FontAwesome name="search" style={topNav.icons} />
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Icon name="shopping-cart" style={topNav.icons} />
+                        <FontAwesome name="shopping-cart" style={topNav.icons} />
                     </TouchableOpacity>
                 </View>
             </View>
