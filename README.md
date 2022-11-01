@@ -9,11 +9,11 @@
 # Tiny Cupcakes App
 
 <div align="center">
-  <img src="assets/image/preview01.jpg" width="200px"/>  
-  <img src="assets/image/preview02.jpg" width="200px"/>
-  <img src="assets/image/preview03.jpg" width="200px"/>
-  <img src="assets/image/preview04.jpg" width="200px"/>
-  <img src="assets/image/preview05.jpg" width="200px"/>
+  <img src="assets/image/preview01.jpg" width="250px"/>  
+  <img src="assets/image/preview02.jpg" width="250px"/>
+  <img src="assets/image/preview03.jpg" width="250px"/>  
+  <img src="assets/image/preview04.jpg" width="250px"/>
+  <img src="assets/image/preview05.jpg" width="250px"/>
 </div>
 
 <br/>
