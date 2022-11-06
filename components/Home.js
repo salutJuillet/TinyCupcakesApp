@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
   const [modalInfo, setModalInfo] = useState({
     name: '',
     price: '',
-    url: ''
+    url: null
   })
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -41,7 +41,6 @@ const Home = ({navigation}) => {
 
   const Item = ({item}) => (
     item.map(i => 
-        <>
             <TouchableOpacity 
                     key={i.name} 
                     style={menu.item} 
@@ -52,7 +51,6 @@ const Home = ({navigation}) => {
                 <Text style={menu.itemText}>{i.name}</Text>
                 <Text style={menu.itemText}>${i.price}</Text>
             </TouchableOpacity>
-        </>
     )
   )
 
